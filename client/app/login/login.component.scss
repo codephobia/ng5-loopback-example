@@ -1,0 +1,16 @@
+button {
+    padding: 10px 20px;
+    background-color: #000;
+    color: #FFF;
+    border: none;
+    outline: none;
+
+    &:focus,
+    &:hover {
+        background-color: lighten(#000, 20%);
+    }
+
+    &.loading {
+        background-color: blue;
+    }
+}

@@ -1,0 +1,9 @@
+<div *ngIf="!isAuthenticated()">
+    <a routerLink="/login">Login</a>
+</div>
+<div *ngIf="isAuthenticated()">
+    <button mat-button [matMenuTriggerFor]="userMenu">{{getUsername()}}</button>
+    <mat-menu #userMenu="matMenu">
+        <button mat-menu-item (click)="onLogout()">Logout</button>
+    </mat-menu>
+</div>

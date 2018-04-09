@@ -1,0 +1,6 @@
+<form (ngSubmit)="onLogin()" *ngIf="!isAuthenticated()">
+    <input type="text" name="username" placeholder="Username" [(ngModel)]="username">
+    <input type="password" name="password" placeholder="Password" [(ngModel)]="password">
+    <button type="submit" [ngClass]="{'loading': loading}">Login</button>
+</form>
+<button type="button" [ngClass]="{'loading': loading}" *ngIf="isAuthenticated()" (click)="onLogout()">Logout</button>
