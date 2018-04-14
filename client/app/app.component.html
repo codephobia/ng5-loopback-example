@@ -1,4 +1,13 @@
-<mat-toolbar color="primary">
-    <app-user-nav></app-user-nav>
+<mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="center center" fxFlex="none">
+    <div class="container-max-1200 p-l-md p-r-md" fxLayout="row" fxFlex>
+        <a routerLink="">Home</a>
+        <div fxFlex></div>
+        <app-user-nav></app-user-nav>
+    </div>
 </mat-toolbar>
-<router-outlet></router-outlet>
+<div fxLayout="row" fxLayoutAlign="center start" fxFlex>
+    <div class="container-max-1200" fxLayout="column" fxLayoutAlign="start start" fxFlex>
+        <router-outlet></router-outlet>
+    </div>
+</div>
+<app-footer class="app-footer-wrapper" fxLayout="row" fxFlex="none" fxLayoutAlign="center start"></app-footer>
