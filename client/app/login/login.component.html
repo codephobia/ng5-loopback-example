@@ -1,6 +1,18 @@
-<form (ngSubmit)="onLogin()" *ngIf="!isAuthenticated()">
-    <input type="text" name="username" placeholder="Username" [(ngModel)]="username">
-    <input type="password" name="password" placeholder="Password" [(ngModel)]="password">
-    <button type="submit" [ngClass]="{'loading': loading}">Login</button>
-</form>
-<button type="button" [ngClass]="{'loading': loading}" *ngIf="isAuthenticated()" (click)="onLogout()">Logout</button>
+<div class="p-xl" fxLayout="row" fxFlex>
+    <form class="login-form" (ngSubmit)="onLogin()" *ngIf="!isAuthenticated()" fxLayout="column" fxFlex>
+        <div fxLayout="row" fxFlex>
+            <mat-form-field fxFlex>
+                <input matInput type="text" name="username" placeholder="Username" [(ngModel)]="username">
+            </mat-form-field>
+        </div>
+        <div fxLayout="row" fxFlex>
+            <mat-form-field fxFlex>
+                <input matInput type="password" name="password" placeholder="Password" [(ngModel)]="password">
+            </mat-form-field>
+        </div>
+        <div fxLayout="row" fxFlex>
+            <button mat-button color="primary" type="submit" fxFlex>Login</button>
+        </div>
+    </form>
+    <button type="button" [ngClass]="{'loading': loading}" *ngIf="isAuthenticated()" (click)="onLogout()">Logout</button>
+</div>

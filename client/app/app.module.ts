@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule, BREAKPOINT } from '@angular/flex-layout';
-import { MatToolbarModule, MatMenuModule } from '@angular/material';
+import { MatToolbarModule, MatMenuModule, MatInputModule, MatButtonModule, MatSnackBarModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -12,14 +12,21 @@ import { SDKBrowserModule } from './lbservices';
 import { UserNavComponent } from './user-nav/user-nav.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import { SnackBarComponent } from './snack-bar/snack-bar.component';
 
 @NgModule({
+    entryComponents: [
+        SnackBarComponent,
+    ],
     declarations: [
         AppComponent,
         LoginComponent,
         UserNavComponent,
         HomeComponent,
         FooterComponent,
+        HeaderComponent,
+        SnackBarComponent,
     ],
     imports: [
         BrowserModule,
@@ -30,6 +37,9 @@ import { FooterComponent } from './footer/footer.component';
         FlexLayoutModule,
         MatToolbarModule,
         MatMenuModule,
+        MatInputModule,
+        MatButtonModule,
+        MatSnackBarModule,
     ],
     providers: [],
     bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-@import "~sass/modules/display";
+@import "~sass/modules/colors";
 @import "~sass/modules/margin";
 @import "~sass/modules/padding";
 
@@ -14,12 +14,16 @@ body {
 html,
 body,
 .app-root {
-    display: block;
     height: 100%;
     min-height: 100%;
 }
 
+body {
+    background-color: map-get($colors, bg);
+}
+
 .app-root {
+    display: block;
     flex-direction: column;
     box-sizing: border-box;
     display: flex;
@@ -28,4 +32,10 @@ body,
 
 .container-max-1200 {
     max-width: 1200px;
+}
+
+.router-flex + * {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
 }

@@ -1,0 +1,29 @@
+.app-button {
+    padding: 0 24px;
+    min-width: 180px;
+    border: 1px solid map-get($colors, primary-dark);
+
+    &.loading {
+        color: white;
+        background-color: map-get($colors, primary-dark);
+
+        &::after {
+            font-family: 'FontAwesome';
+            content: '\f013';
+            position: absolute;
+            top: 0px;
+            right: 10px;
+            animation: rotate 1.5s linear infinite;
+
+        }
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

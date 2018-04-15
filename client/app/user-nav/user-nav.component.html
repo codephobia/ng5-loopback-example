@@ -1,5 +1,5 @@
 <div *ngIf="!isAuthenticated()">
-    <a routerLink="/login">Login</a>
+    <a routerLink="/login" [routerLinkActive]="['active']">Login</a>
 </div>
 <div *ngIf="isAuthenticated()">
     <button mat-button [matMenuTriggerFor]="userMenu">{{getUsername()}}</button>

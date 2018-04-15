@@ -1,3 +1,6 @@
+@import '~sass/modules/colors';
+@import '~sass/modules/transitions';
+
 .app-footer {
     .footer-col-title {
         color: #d2d2d2;
@@ -16,13 +19,13 @@
             }
 
             a {
-                color: hsla(0,0%,100%,.5);
+                color: map-get($colors, footer-text);
                 text-decoration: none;
-                transition: .15s ease-in-out color;
+                transition: map-get($transitions, fast) color;
 
                 &:focus,
                 &:hover {
-                    color: white;
+                    color: map-get($colors, footer-text-hover);
                 }
             }
         }
