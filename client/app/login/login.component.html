@@ -1,8 +1,8 @@
-<div class="p-xl" fxLayout="row" fxFlex>
-    <form class="login-form" (ngSubmit)="onLogin()" *ngIf="!isAuthenticated()" fxLayout="column" fxFlex>
+<div class="p-t-xl p-b-xl" fxLayout="row" fxFlex>
+    <form class="login-form" (ngSubmit)="onLogin()" fxLayout="column" fxFlex>
         <div fxLayout="row" fxFlex>
             <mat-form-field fxFlex>
-                <input matInput type="text" name="username" placeholder="Username" [(ngModel)]="username">
+                <input matInput type="text" name="username" placeholder="Username" [(ngModel)]="username" autofocus>
             </mat-form-field>
         </div>
         <div fxLayout="row" fxFlex>
@@ -14,5 +14,4 @@
             <button mat-button color="primary" type="submit" fxFlex>Login</button>
         </div>
     </form>
-    <button type="button" [ngClass]="{'loading': loading}" *ngIf="isAuthenticated()" (click)="onLogout()">Logout</button>
 </div>

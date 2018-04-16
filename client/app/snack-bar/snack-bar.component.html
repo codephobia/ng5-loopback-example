@@ -1,2 +1,4 @@
-<span class="md-simple-snackbar-message">{{getMessage()}}</span>
-<button md-button class="md-simple-snackbar-action" *ngIf="hasAction" (click)="dismiss()">{{getAction()}}</button>
+<div class="message">{{getMessage()}}</div>
+<button md-button class="close" (click)="dismiss()" aria-label="Close">
+    <i class="fas fa-times"></i>
+</button>

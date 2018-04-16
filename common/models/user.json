@@ -10,10 +10,12 @@
 	"properties": {
 		"realm": false,
 		"username": {
-			"type": "String"
+            "type": "String",
+            "required": true
 		},
 		"email": {
-			"type": "String"
+            "type": "String",
+            "required": true
 		},
 		"active": {
 			"type": "Boolean",
@@ -35,6 +37,13 @@
 		}
 	},
 	"acls": [
+        {
+            "principalType": "ROLE",
+            "principalId": "$everyone",
+            "permission": "ALLOW",
+            "property": "findOne",
+            "accessType": "EXECUTE"
+        }
 	],
 	"validations": [],
 	"mixins": {

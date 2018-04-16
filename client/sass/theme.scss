@@ -74,8 +74,4 @@ $accent: mat-palette($md-palette-secondary, 500);
 
 $theme: mat-light-theme($primary, $accent);
 
-.mat-toolbar {
-    color: map-get($colors, header-text) !important;
-}
-
 @include angular-material-theme($theme);

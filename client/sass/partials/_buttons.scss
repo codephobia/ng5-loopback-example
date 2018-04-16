@@ -1,3 +1,5 @@
+@import "~sass/modules/animations";
+
 .app-button {
     padding: 0 24px;
     min-width: 180px;
@@ -13,17 +15,8 @@
             position: absolute;
             top: 0px;
             right: 10px;
-            animation: rotate 1.5s linear infinite;
-
+            animation: map-get($animations, rotate);
         }
     }
 }
 
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}

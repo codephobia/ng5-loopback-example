@@ -2,6 +2,9 @@
 @import "~sass/modules/colors";
 @import "~sass/modules/margin";
 @import "~sass/modules/padding";
+@import "~sass/modules/reset";
+@import "~sass/modules/material-reset";
+@import "~sass/modules/transitions";
 
 *,
 html,
@@ -38,4 +41,22 @@ body {
     display: flex;
     flex: 1 1 auto;
     flex-direction: row;
+}
+
+.user-menu {
+    background-color: map-get($colors, primary-light) !important;
+
+    .mat-menu-content {
+        padding: 0;
+
+        .mat-menu-item {
+            color: map-get($colors, header-text);
+            transition: map-get($transitions, fast) color, map-get($transitions, fast) background-color;
+
+            &:hover {
+                color: map-get($colors, header-text-hover);
+                background-color: map-get($colors, primary-dark);
+            }
+        }
+    }
 }

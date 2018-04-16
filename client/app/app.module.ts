@@ -14,6 +14,9 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { SnackBarComponent } from './snack-bar/snack-bar.component';
+import { SignupComponent } from './signup/signup.component';
+import { ProfileComponent } from './profile/profile.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
     entryComponents: [
@@ -27,6 +30,9 @@ import { SnackBarComponent } from './snack-bar/snack-bar.component';
         FooterComponent,
         HeaderComponent,
         SnackBarComponent,
+        SignupComponent,
+        ProfileComponent,
+        NotFoundComponent,
     ],
     imports: [
         BrowserModule,

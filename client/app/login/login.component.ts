@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Injectable, Component, OnInit } from '@angular/core';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
+import { Observable } from 'rxjs';
 import 'rxjs/add/operator/finally';
 
 import { UserApi as UserService } from '../lbservices';
@@ -11,7 +12,8 @@ import { SnackBarService } from '../services/snack-bar.service';
     styleUrls: ['./login.component.scss'],
     providers: [
         SnackBarService,
-    ]
+    ],
+
 })
 export class LoginComponent {
     private loading: boolean = false;
@@ -24,10 +26,6 @@ export class LoginComponent {
         private snackbar: SnackBarService
     ) {}
 
-    isAuthenticated(): boolean {
-        return this.user.isAuthenticated();
-    }
-
     onLogin() {
         this.loading = true;
 
@@ -39,16 +37,27 @@ export class LoginComponent {
                 this.loading = false;
             })
             .subscribe(
-                res => {
-                    console.log(res);
-                },
+                res => {},
                 data => {
-                    this.snackbar.notify(data.message, 'error');
+                    this.snackbar.notify(data.message, ['error']);
                     console.error('err: ', data);
                 },
                 () => {
                     this.router.navigate(['/']);
+                    this.snackbar.notify('Login successful', ['success']);
                 }
             );
+    }
+}
+
+@Injectable()
+export class CanActivateLogin implements CanActivate {
+    constructor(private user: UserService) { }
+
+    canActivate(
+        route: ActivatedRouteSnapshot,
+        state: RouterStateSnapshot
+    ): Observable<boolean> | Promise<boolean> | boolean {
+        return !this.user.isAuthenticated();
     }
 }

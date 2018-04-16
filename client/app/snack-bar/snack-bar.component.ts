@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBarRef } from '@angular/material';
 
 @Component({
-  selector: 'app-snack-bar',
+  selector: '.app-snack-bar',
   templateUrl: './snack-bar.component.html',
   styleUrls: ['./snack-bar.component.scss']
 })

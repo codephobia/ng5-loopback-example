@@ -2,10 +2,11 @@
 @import '~sass/modules/transitions';
 
 .header-nav {
-    a {
+    ::ng-deep a {
         color: map-get($colors, header-text);
         text-decoration: none;
         transition: map-get($transitions, fast) color;
+        line-height: 64px;
 
         &:focus,
         &:hover {

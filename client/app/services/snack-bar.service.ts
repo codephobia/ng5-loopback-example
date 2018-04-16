@@ -8,10 +8,15 @@ export class SnackBarService {
 
     constructor(public snackBar: MatSnackBar) {}
 
-    notify(message: string, className: string = '') {
+    notify(message: string, classNames: string[]) {
         SnackBarComponent.message = message;
         SnackBarComponent.action = 'Close';
-        this.snackBarRef = this.snackBar.openFromComponent(SnackBarComponent);
+        this.snackBarRef = this.snackBar.openFromComponent(SnackBarComponent, {
+            duration: 4000,
+            verticalPosition: 'top',
+            horizontalPosition: 'end',
+            panelClass: ['app-snack-bar-container'].concat(classNames),
+        });
         this.snackBarRef.instance.snackBarRef = this.snackBarRef;
     }
 
