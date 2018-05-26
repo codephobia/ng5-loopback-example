@@ -1,5 +1,8 @@
 'use strict';
 
+// envkey loads keys to the process.env
+require('envkey');
+
 var loopback = require('loopback');
 var boot = require('loopback-boot');
 var path = require('path');

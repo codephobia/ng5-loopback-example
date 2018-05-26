@@ -63,3 +63,6 @@ Thumbs.db
 
 package-lock.json
 /client/app/lbservices
+
+# envkey
+.env
